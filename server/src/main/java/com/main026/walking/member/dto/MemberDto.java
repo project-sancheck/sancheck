@@ -3,6 +3,7 @@ package com.main026.walking.member.dto;
 import com.main026.walking.community.dto.CommunityDto;
 import com.main026.walking.member.entity.Member;
 import com.main026.walking.pet.dto.PetDto;
+import com.main026.walking.util.annotation.Password;
 import com.main026.walking.util.embedded.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +11,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,8 +23,12 @@ public class MemberDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Post{
+        @Email
         private String email;
+        //@Pattern(regexp="^(?=.*\\d)(?=.*[a-zA-Z])[\\da-zA-Z]{8,16}")
+        @Password
         private String password;
+        @Pattern(regexp="[a-zA-Z\\d가-힣]{2,10}")
         private String username;
 
         private String si;

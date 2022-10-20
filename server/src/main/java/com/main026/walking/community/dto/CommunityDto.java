@@ -12,6 +12,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,21 +25,19 @@ public class CommunityDto {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Post {
+        @NotEmpty
         private String name;
 
         private List<String> imgUrls = new ArrayList<>();
 
-        /**
-         * 시,구,동을 받아야하는데 나눠서 받는 방법 외에 또 있을까?
-         * 영어명보다 좀 더 직관적이려고 한글발음을 썼는데 좀 아닌것같기도하다.
-         */
         private String si;
         private String gu;
         private String dong;
-
+        @NotEmpty
         private String place;
-
+        @NotEmpty
         private String body;
+        @Min(2)
         private Integer capacity;
 
         private Long[] joinnedPetList;

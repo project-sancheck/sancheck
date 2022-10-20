@@ -15,6 +15,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
@@ -26,7 +27,7 @@ public class MemberController {
     private final AwsS3Service awsS3Service;
 
     @PostMapping("/signup")
-    public MemberDto.Response signUp(@RequestBody MemberDto.Post memberPostDto) throws IOException {
+    public MemberDto.Response signUp(@RequestBody @Valid MemberDto.Post memberPostDto) throws IOException {
         return memberService.saveMember(memberPostDto);
     }
 
