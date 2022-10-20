@@ -6,6 +6,7 @@ import com.main026.walking.pet.entity.Pet;
 import com.main026.walking.util.embedded.PetAge;
 import lombok.*;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 public class PetDto {
@@ -14,6 +15,7 @@ public class PetDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Post{
+        @NotEmpty
         private String petName;
         private String petGender;
         private String imgUrl;

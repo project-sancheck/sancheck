@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 public class CommentDto {
@@ -13,6 +14,7 @@ public class CommentDto {
   @Getter
   @AllArgsConstructor @NoArgsConstructor
   public static class Post{
+    @NotEmpty
     private String body;
     private LocalDateTime createdAt = LocalDateTime.now();
   }
