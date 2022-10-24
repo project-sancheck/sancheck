@@ -29,7 +29,7 @@
 
 ### Backend
 [![Java](https://img.shields.io/badge/Java-17-navy)]()
-[![SpringBoot](https://img.shields.io/badge/SpringBoot-5.3.22-green)]()
+[![SpringBoot](https://img.shields.io/badge/SpringBoot-2.7.3-green)]()
 [![SpringSecurity](https://img.shields.io/badge/SpringSecurity-5.7.3-green)]()
 [![SpringJPA](https://img.shields.io/badge/SpringJPA-2.7.2-green)]()
 [![Querydsl](https://img.shields.io/badge/Querydsl-5.0.0-blue)]()
